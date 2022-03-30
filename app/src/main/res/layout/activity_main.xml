@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!-- this is comment -->
+    <!--
+    chúng em sử dụng table layout vì sau khi tìm hiểu cho thấy table layout
+    có thể sử dụng khi chúng ta cần dùng một layout có nhiều row mà có các
+    button giống nhau về kích thước và nó thực sự dễ quản lý hơn khi chúng ta
+    tạo riêng từng button không thuộc 1 layout nào cả
+    Hầu Kiến Tín -19110060 - 12/3/2022 - 13h
+    -->
+    <!-- this is comment
+    Chúng em sử dụng các file xml drawable để vẽ cho nút có hình tròn
+    và tạo các state khi nhấn cho nút có sự thay đổi màu khi nhấn
+    và gán chúng cho từng nút tổng cộng chúng em có 4 file drawable
+    Hầu Kiến Tín - 19110060 - 12/3/2022 - 14h-->
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:paddingTop="20dp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workingsTextView"
+        app:layout_constraintVertical_bias="0.69">
+        <!-- this is comment -->
+        <!--
+        Chúng em sử dụng table layout với mong muốn sử dụng được
+        thuộc tính layout_weight để cân bằng layout cho các dòng table row
+        Nguyễn Thanh Tường -19110066 -12/3/2022 - 13h
+        -->
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1">
+            <!-- this is comment
+            Chúng em viết text cho các button trong file string.xml để
+            định nghĩa các btn và sau này dễ bề thay đổi
+            Nguyễn Thanh Tường -19110066 -12/3/2022 - 13h-->
+
+            <Button
+
+                android:id="@+id/btnclear"
+
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+
+                android:adjustViewBounds="true"
+                android:background="@drawable/cleatbtn"
+                android:scaleType="fitXY"
+                android:text="@string/clear"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTint="@null"
+                android:onClick="clearOnClick"/>
+
+            <Button
+                android:id="@+id/btnparentheses"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle"
+                android:text="@string/parentheses"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTint="@null"
+                android:onClick="bracketsOnClick"/>
+
+            <Button
+                android:id="@+id/btnexponent"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle"
+                android:text="@string/exponent"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="powerOfOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btndivide"
+                style="@style/Widget.AppCompat.Button.Borderless"
+
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle"
+                android:text="@string/divide"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="divisionOnClick"
+                app:backgroundTint="@null" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnone"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/one"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="oneOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btntwo"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/two"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="twoOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnthree"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/three"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTint="@null"
+                android:onClick="threeOnClick"/>
+
+            <Button
+                android:id="@+id/btnmulti"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle"
+                android:text="@string/multiply"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTint="@null"
+                android:onClick="timesOnClick"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnfour"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/four"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="fourOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnfive"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/five"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="fiveOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnsix"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/six"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="sixOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnsubtract"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle"
+                android:text="@string/subtract"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="minusOnClick"
+                app:backgroundTint="@null" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnseven"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/seven"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="sevenOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btneight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/eight"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="eightOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnnine"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/nine"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="nineOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnadd"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle"
+                android:text="@string/add"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="plusOnClick"
+                app:backgroundTint="@null" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+<!--            <Button-->
+<!--                android:id="@+id/btnplusminus"-->
+<!--                style="@style/Widget.AppCompat.Button.Borderless"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:background="@drawable/circle"-->
+<!--                android:text="@string/plusMinus"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="20sp"-->
+<!--                app:backgroundTint="@null" />-->
+
+            <Button
+                android:id="@+id/btnzero"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/number"
+                android:text="@string/zero"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:onClick="zeroOnClick"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/btnpoint"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle"
+                android:text="@string/point"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTint="@null"
+                android:onClick="decimalOnClick"/>
+
+            <Button
+                android:id="@+id/btnequals"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/equalsbutton"
+                android:text="@string/equals"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_weight="2"
+                app:backgroundTint="@null"
+                android:onClick="equalsOnClick"/>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/workingsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="bottom|end"
+        android:paddingStart="0dp"
+        android:paddingTop="30dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="30dp"
+        android:text="@string/workingsTextView"
+        android:textAlignment="textEnd"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|end"
+        android:paddingStart="0dp"
+        android:paddingTop="30dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="30dp"
+        android:text="@string/resultTextView"
+        android:textAlignment="textEnd"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workingsTextView" />
+    <!-- this is comment
+    bọn em dùng android:gravity ="bottom|end" để chữ có thể chạy từ
+    phải sang trái như máy tính trên điện thoại 19110060_HauKienTin_15h-->
+    <!-- this is comment
+   Chúng em chọn dùng textview để khi nhấn vào button trên screen sẽ xuất
+   hiện số trên màn text view đó
+   Nguyễn Thanh Tường -19110066 - 15h-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
